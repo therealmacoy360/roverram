@@ -123,7 +123,11 @@ img { max-width: 100%; display: block; }
 .quote-total span:last-child { color: var(--accent); font-size: 1.4rem; }
 .quote-note { font-size: .8rem; color: var(--muted); margin-top: 4px; }
 
-/* ===================== Steps ===================== */
+.book-btn { display: inline-block; margin-top: 18px; }
+
+/* ===================== Map ===================== */
+.map-wrap { max-width: 860px; margin: 0 auto; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--border); }
+.map-wrap iframe { display: block; width: 100%; height: 380px; border: 0; }
 .steps { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; counter-reset: step; }
 .steps li { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 26px; box-shadow: var(--shadow); }
 .step-num { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: var(--accent); color: #fff; font-weight: 700; margin-bottom: 14px; }
