@@ -24,8 +24,19 @@ Open http://localhost:8000
 ## What to edit
 - Pricing: top of assets/js/main.js -> SERVICE_PRICES, FREE_MILES, PER_MILE, MULTI_DISCOUNT
 - Brand color: --accent in assets/css/styles.css
-- Contact form delivery: FORMSPREE_ENDPOINT in assets/js/main.js (see below)
-- Contact details: index.html contact section + FALLBACK_EMAIL in main.js
+- Contact details: index.html contact section (email/phone/area) + success.html
+- Booking link: the Calendly href in index.html contact section
+- Service-area map: the `q=` query in the map iframe src (index.html)
+
+## Current feature status (as of last session)
+- [x] Hero, services, Euro-spec credibility section, how-it-works, about, contact
+- [x] Instant quote calculator (vehicle + distance from Bellingham, travel free <=15mi, $1.50/mi after)
+- [x] Contact form via Netlify Forms -> emails roverram@roverram.com (verified working)
+- [x] Calendly booking button -> https://calendly.com/roverram-roverram/60mins (60-min slot)
+- [x] Bellingham service-area Google Map embed
+- [x] Deployed on Netlify, custom domain roverram.com, HTTPS live, email working
+- [ ] About photo (placeholder box still says "YOUR PHOTO HERE")
+- [ ] Google Business Profile for local SEO (off-site, not in repo)
 
 ## Contact form (DONE — working)
 Uses **Netlify Forms** (no backend, no extra account). Submissions go to
@@ -72,8 +83,7 @@ Notes:
   While provisioning, browsers show "website is private" / "not secure" — wait it out.
 - If cert stalls >24h: add a CAA record in Netlify DNS allowing letsencrypt.org / digicert.com.
 
-## Optional upgrades (not yet done)
+## Optional upgrades (remaining)
 - Add a real photo in the About section (replace placeholder box with <img>).
-- Add a Calendly/booking link (commented out in contact section).
-- Add a Google Maps embed for the Bellingham service area.
+- Create a Google Business Profile for local SEO ("oil change Bellingham").
 - Consider a small cost/margin tracker page.
