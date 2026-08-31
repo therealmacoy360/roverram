@@ -199,11 +199,12 @@
         <!-- <a class="btn btn-primary" href="https://calendly.com/your-link">Pick a time</a> -->
       </div>
 
-      <form class="contact-form" id="contactForm" novalidate>
-        <!-- Honeypot: hidden spam trap. Humans never see/fill it. -->
+      <form class="contact-form" id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+        <input type="hidden" name="form-name" value="contact" />
+        <!-- Honeypot: hidden spam trap (Netlify bot-field). Humans never see/fill it. -->
         <div class="field hp" aria-hidden="true">
-          <label for="_gotcha">Leave this blank</label>
-          <input type="text" id="_gotcha" name="_gotcha" tabindex="-1" autocomplete="off" />
+          <label for="bot-field">Leave this blank</label>
+          <input type="text" id="bot-field" name="bot-field" tabindex="-1" autocomplete="off" />
         </div>
         <div class="field">
           <label for="name">Name</label>
