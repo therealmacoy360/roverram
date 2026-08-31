@@ -27,13 +27,17 @@ Open http://localhost:8000
 - Contact form delivery: FORMSPREE_ENDPOINT in assets/js/main.js (see below)
 - Contact details: index.html contact section + FALLBACK_EMAIL in main.js
 
-## Contact form
-Currently uses the mailto fallback (opens visitor's email app to roverram@roverram.com).
-To make submissions deliver directly to your inbox:
-1. Sign up free at formspree.io, create a form.
-2. Copy the endpoint URL (https://formspree.io/f/xxxxxx).
-3. Paste it into FORMSPREE_ENDPOINT in assets/js/main.js (line ~10).
-The form already has a spam honeypot and works without JS too.
+## Contact form (DONE — working)
+Uses **Netlify Forms** (no backend, no extra account). Submissions go to
+Netlify -> Forms and are emailed to roverram@roverram.com via an email
+notification (set up in Netlify: Forms -> Add notification -> Email).
+- Form tag in index.html: `data-netlify="true" netlify-honeypot="bot-field" action="/success.html"`
+- Success redirect: success.html
+- Spam: hidden `bot-field` honeypot (Netlify drops filled ones)
+- JS only does client-side validation; the browser POSTs natively
+  (AJAX fetch was rejected by Netlify's spam layer — don't switch back).
+- If a deploy shows a 404 on /success.html, do Deploys -> Clear cache and
+  deploy site (stale edge cache).
 
 ## Deploy & DNS (DONE — record of how it was set up)
 Hosting: Netlify. Repo: https://github.com/therealmacoy360/roverram
