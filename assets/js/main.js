@@ -62,51 +62,17 @@ calcQuote();
 const form = document.getElementById("contactForm");
 const status = document.getElementById("formStatus");
 
-// Build the Netlify Forms POST body the way Netlify expects (form-urlencoded,
-// with form-name + bot-field). AJAX so the user stays on the page.
-function encode(data) {
-  return Object.keys(data)
-    .map((k) => encodeURIComponent(k) + "=" + encodeURIComponent(data[k]))
-    .join("&");
-}
-
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
+// Native Netlify Forms submission. We only run client-side validation here,
+// then let the browser POST natively (Netlify handles the rest and redirects
+// to the action URL). AJAX fetch is avoided because Netlify's bot/spam layer
+// often rejects it.
+form.addEventListener("submit", (e) => {
   status.textContent = "";
   status.className = "form-status";
-
-  // Basic validation
   if (!form.name.value.trim() || !form.email.value.trim() || !form.message.value.trim()) {
+    e.preventDefault();
     status.textContent = "Please fill in name, email, and message.";
     status.classList.add("err");
-    return;
   }
-
-  const data = {
-    "form-name": "contact",
-    name: form.name.value,
-    email: form.email.value,
-    service: form.service.value,
-    message: form.message.value,
-    "bot-field": form["bot-field"] ? form["bot-field"].value : "",
-  };
-
-  status.textContent = "Sending…";
-  try {
-    const res = await fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode(data),
-    });
-    if (res.ok) {
-      status.textContent = "Thanks! Your message is on its way — I'll reply soon.";
-      status.classList.add("ok");
-      form.reset();
-    } else {
-      throw new Error("submit failed");
-    }
-  } catch {
-    status.textContent = "Something went wrong sending. Please email roverram@roverram.com directly.";
-    status.classList.add("err");
-  }
+  // If valid, do nothing — the browser submits natively to /success.html.
 });
