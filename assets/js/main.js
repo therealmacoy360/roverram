@@ -10,7 +10,7 @@
 const FORMSPREE_ENDPOINT = "";
 
 // Fallback email used when no Formspree endpoint is set (opens user's mail app)
-const FALLBACK_EMAIL = "you@example.com";  // TODO: your real email
+const FALLBACK_EMAIL = "roverram@roverram.com";
 // ----------------------------------------------------------------------
 
 // If a Formspree endpoint is set, point the form at it so it also works
