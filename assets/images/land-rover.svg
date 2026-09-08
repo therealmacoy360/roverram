@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 52" aria-hidden="true">
+  <!-- Land Rover badge: green diamond with stacked wordmark -->
+  <g transform="rotate(45 32 26)">
+    <rect x="6" y="6" width="52" height="40" rx="4" fill="#1b5e3f"/>
+  </g>
+  <text x="32" y="22" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="10" letter-spacing="1.4" fill="#fff">LAND</text>
+  <text x="32" y="36" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="10" letter-spacing="1.4" fill="#fff">ROVER</text>
+</svg>

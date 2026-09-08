@@ -99,7 +99,8 @@ img { max-width: 100%; display: block; }
 /* ===================== Specs ===================== */
 .spec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
 .spec-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); }
-.spec-card h3 { font-size: 1.1rem; margin-bottom: 12px; }
+.spec-card h3 { font-size: 1.1rem; margin-bottom: 12px; display: flex; align-items: center; gap: 9px; }
+.spec-card h3 .spec-logo { flex-shrink: 0; }
 .spec-card ul { list-style: none; }
 .spec-card li { padding: 7px 0; border-bottom: 1px solid var(--border); font-size: .92rem; color: var(--muted); }
 .spec-card li:last-child { border-bottom: 0; }
