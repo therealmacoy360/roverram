@@ -31,9 +31,7 @@ links.querySelectorAll("a").forEach((a) =>
 // Base service price per make (full synthetic + OEM filter + labor)
 const SERVICE_PRICES = {
   mini: 139,
-  audi: 169,
   landrover: 229,
-  porsche: 379,
 };
 const FREE_MILES = 15;        // travel free within this radius
 const PER_MILE = 1.5;         // $ per mile beyond FREE_MILES

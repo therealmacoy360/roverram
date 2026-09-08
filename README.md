@@ -1,7 +1,7 @@
 # RoverRam — At-Home Oil Changes for European Cars
 
 Static website for RoverRam: mobile oil changes at the customer's home/office,
-specializing in Land Rover, Mini Cooper, Audi & Porsche. No build step, no backend.
+specializing in Land Rover & Mini Cooper. No build step, no backend.
 
 Business details (live on site):
 - Email: roverram@roverram.com
