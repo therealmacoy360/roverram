@@ -35,12 +35,10 @@ const SERVICE_PRICES = {
 };
 const FREE_MILES = 15;        // travel free within this radius
 const PER_MILE = 1.5;         // $ per mile beyond FREE_MILES
-const MULTI_DISCOUNT = 20;    // $ off when a 2nd vehicle is booked
 // ---------------------------------------------------------------
 
 const qMake = document.getElementById("qMake");
 const qMiles = document.getElementById("qMiles");
-const qMulti = document.getElementById("qMulti");
 const qService = document.getElementById("qService");
 const qTravel = document.getElementById("qTravel");
 const qTotal = document.getElementById("qTotal");
@@ -49,13 +47,12 @@ function calcQuote() {
   const base = SERVICE_PRICES[qMake.value] || 0;
   const miles = Math.max(0, parseInt(qMiles.value, 10) || 0);
   const travel = miles <= FREE_MILES ? 0 : Math.round((miles - FREE_MILES) * PER_MILE);
-  const multi = qMulti.checked ? MULTI_DISCOUNT : 0;
-  const total = base + travel - multi;
+  const total = base + travel;
   qService.textContent = "$" + base;
   qTravel.textContent = "$" + travel + (travel === 0 ? " (free)" : "");
   qTotal.textContent = "$" + total;
 }
-[qMake, qMiles, qMulti].forEach((el) => el.addEventListener("input", calcQuote));
+[qMake, qMiles].forEach((el) => el.addEventListener("input", calcQuote));
 calcQuote();
 const form = document.getElementById("contactForm");
 const status = document.getElementById("formStatus");
