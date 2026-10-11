@@ -4,7 +4,7 @@ Static website for RoverRam: mobile oil changes at the customer's home/office,
 specializing in Land Rover & Mini Cooper. No build step, no backend.
 
 Business details (live on site):
-- Email: roverram@roverram.com
+- Email: urielramirezsr@gmail.com
 - Phone: (360) 410-4044
 - Base: Bellingham, WA (Whatcom County)
 - Domain: roverram.com (registered via Squarespace Domains)
@@ -31,8 +31,9 @@ Open http://localhost:8000
 ## Current feature status (as of last session)
 - [x] Hero, services, Euro-spec credibility section, how-it-works, about, contact
 - [x] Instant quote calculator (vehicle + distance from Bellingham, travel free <=15mi, $1.50/mi after)
-- [x] Contact form via Netlify Forms -> emails roverram@roverram.com (verified working)
-- [x] Calendly booking button -> https://calendly.com/roverram-roverram/60mins (60-min slot)
+- [x] Contact form via Netlify Forms -> emails to your Netlify notification address (form submissions also viewable in dashboard)
+|- [x] Calendly booking button -> removed (contact form is the only booking method)
+|- [ ] Booking link / Calendly (if you want it back)
 - [x] Bellingham service-area Google Map embed
 - [x] Deployed on Netlify, custom domain roverram.com, HTTPS live, email working
 - [ ] About photo (placeholder box still says "YOUR PHOTO HERE")
@@ -40,7 +41,7 @@ Open http://localhost:8000
 
 ## Contact form (DONE — working)
 Uses **Netlify Forms** (no backend, no extra account). Submissions go to
-Netlify -> Forms and are emailed to roverram@roverram.com via an email
+Netlify -> Forms and are emailed to your notification address via an email
 notification (set up in Netlify: Forms -> Add notification -> Email).
 - Form tag in index.html: `data-netlify="true" netlify-honeypot="bot-field" action="/success.html"`
 - Success redirect: success.html

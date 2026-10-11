@@ -5,7 +5,7 @@
 // --- Contact form: Netlify Forms (no backend needed) -----------------
 // Captures submissions in the Netlify dashboard and can email them to you.
 // To receive submissions by email: Netlify site -> Forms -> Add notification
-// -> Email notification -> roverram@roverram.com
+// -> Email notification -> urielramirezsr@gmail.com
 // The form tag in index.html carries data-netlify="true"; Netlify detects it
 // at deploy time. No endpoint URL or API key required.
 // ----------------------------------------------------------------------
